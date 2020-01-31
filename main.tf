@@ -5,11 +5,11 @@ provider "aws" {
   region = "us-east-1"
 }
 
-module "ami_ID" {
+module "aws_ami_id" {
   source = "./modules/ami_module"
 }
 
-module "ec2_ID" {
+module "aws_ec2_id" {
   source = "./modules/ec2_module"
-  ami_ID = var.ami_ID
+  aws_ami_id = ''
 }
