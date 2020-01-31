@@ -11,5 +11,5 @@ module "aws_ami_id" {
 
 module "aws_ec2_id" {
   source = "./modules/ec2_module"
-  aws_ami_id = ''
+  aws_ami_id = module.aws_ami_id.aws_ami_id
 }
