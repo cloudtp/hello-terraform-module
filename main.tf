@@ -4,6 +4,14 @@ provider "aws" {
   region = "us-east-1"
 }
 
+terraform {
+  backend "s3" {
+    bucket = "wave4-terraform-state"
+    key    = "wave4-status.tfstate"
+    region = "us-east-1"
+  }
+}
+
 module "aws_ami" {
   source = "./modules/ami_module"
 }
